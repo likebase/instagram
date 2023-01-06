@@ -1,23 +1,23 @@
 document.addEventListener("DOMContentLoaded",
     function(e) {
-        let keydown = document.querySelector("#keydown")
-        keydown.addEventListener("keydown",
+        let nameEditButton = document.querySelector("#nameEditButton")
+        let editName = document.querySelector("#editNameField")
+        let okButton = document.querySelector("#okButton")
+        let newName = document.querySelector("#newName")
+        let nameHere = document.querySelector("#nameHere")
+
+        nameEditButton.addEventListener("click",
             function(e) {
-                console.log(e.target.value)
+                editName.style.display = "block"
+                nameEditButton.style.display = "none"
             }
         )
 
-        let change = document.querySelector("#change")
-        change.addEventListener("change",
+        okButton.addEventListener("click",
             function(e) {
-                console.log(e.target.value)
-            }
-        )
-
-        let input = doument.querySelector("#input")
-        input.addEventListener("input",
-            function(e) {
-                console.log(e.target.value)
+                nameHere.textContent = newName.value
+                editName.style.display = "none"
+                nameEditButton.style.display = "inline"
             }
         )
     }
